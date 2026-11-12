@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shop sample deals on skincare, snacks, clothing, shoes, and drinks." />
+    <title>Special Offers | LunaCart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="LunaCart home">
+          <span class="brand-mark">L</span>
+          <span>LunaCart</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="products.html">Shop</a>
+          <a href="#offers" aria-current="page">Offers</a>
+          <a href="contact.html">Account</a>
+        </nav>
+        <form class="nav-search" role="search" id="offerSearchForm">
+          <label class="sr-only" for="offerSearch">Search offers</label>
+          <input id="offerSearch" type="search" placeholder="Search offers..." autocomplete="off" />
+          <button type="submit" aria-label="Search offers">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.8"></circle>
+              <path d="m16 16 5 5"></path>
+            </svg>
+          </button>
+        </form>
+        <div class="nav-actions">
+          <button class="cart-button" id="offerCartToggle" aria-label="Open shopping basket">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 8h14l1 13H4L5 8Z"></path>
+              <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+            </svg>
+            <span class="cart-count" id="offerCartCount" aria-live="polite">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="offers">
+      <section class="offers-hero">
+        <div class="container offers-hero-content">
+          <div>
+            <span class="eyebrow">Good finds, better prices</span>
+            <h1>A little something for every day.</h1>
+            <p>Browse deals on skincare, snacks, clothing, shoes, and drinks.</p>
+            <p class="sample-prices-note">Sample offers and prices — update them with your store’s actual deals before launch.</p>
+            <a class="primary-button" href="#offerCatalog">Explore offers</a>
+          </div>
+          <div class="offers-hero-badge" aria-label="Deals across five categories">
+            <span>Fresh picks</span>
+            <strong>Deals for<br />everyday life</strong>
+            <small>5 categories to explore</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="container offers-section" id="offerCatalog" aria-labelledby="offerTitle">
+        <div class="catalog-heading">
+          <div>
+            <p class="catalog-kicker">The offers shelf</p>
+            <h2 id="offerTitle">Shop all deals</h2>
+          </div>
+          <span class="catalog-count" id="offerProductCount">22 products</span>
+        </div>
+        <div class="offers-filters" role="group" aria-label="Filter offers by category">
+          <button class="catalog-filter active" type="button" data-offer-category="all">All deals</button>
+          <button class="catalog-filter" type="button" data-offer-category="Skin care">Skin care</button>
+          <button class="catalog-filter" type="button" data-offer-category="Snacks">Snacks</button>
+          <button class="catalog-filter" type="button" data-offer-category="Clothing">Clothing</button>
+          <button class="catalog-filter" type="button" data-offer-category="Shoes">Shoes</button>
+          <button class="catalog-filter" type="button" data-offer-category="Drinks">Drinks</button>
+        </div>
+        <p class="catalog-status" id="offerStatus" aria-live="polite"></p>
+        <div class="offer-product-grid" id="offerProductGrid"></div>
+      </section>
+    </main>
+
+    <aside class="cart-panel" id="offerCartPanel" aria-label="Shopping basket">
+      <div class="cart-header">
+        <h3>Your basket</h3>
+        <button id="offerCartClose" aria-label="Close basket">×</button>
+      </div>
+      <div class="cart-items" id="offerCartItems"></div>
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <strong id="offerCartTotal">KSh 0.00</strong>
+        </div>
+        <form class="payment-demo-form" data-payment-form data-cart-count="offerCartCount">
+          <label for="checkoutPhone">M-Pesa or mobile money number</label>
+          <input id="checkoutPhone" data-payment-phone type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 0712 345 678" required />
+          <button class="checkout-button" type="submit">Try demo payment</button>
+          <p class="payment-demo-note">Demo only: no payment prompt will be sent and no money will be charged.</p>
+          <p class="payment-demo-status" data-payment-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">L</span>
+            <span>LunaCart</span>
+          </a>
+          <p>Everyday essentials at special prices.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Shop</a>
+          <a href="#offers">Offers</a>
+          <a href="contact.html">Account</a>
+        </div>
+      </div>
+    </footer>
+ 
+    <script src="search.js"></script>
+    <script src="offers.js"></script>
+    <script src="payment-demo.js"></script>
+  </body>
+</html>

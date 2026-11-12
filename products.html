@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore drinks and biscuits at LunaCart." />
+    <title>Drinks & Biscuits | LunaCart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/fontawesome.css"
+      integrity="sha512-cOd3Jjo4vXG7cyt5/gEQgxwL6c7THvNQxSZphogpsFKsnbgeqEWa7Xsyf7zvDMpdmDAhiUUJGQPc5R3pocvnBQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="topbar" id="home">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="LunaCart home">
+          <span class="brand-mark">L</span>
+          <span>LunaCart</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="#catalog" aria-current="page">Shop drinks</a>
+          <a href="offers.html">Offers</a>
+          <a href="contact.html">Account</a>
+        </nav>
+        <form class="nav-search" role="search" id="catalogSearchForm">
+          <label class="sr-only" for="catalogSearch">Search products</label>
+          <input id="catalogSearch" type="search" placeholder="Search products..." autocomplete="off" />
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.8"></circle>
+              <path d="m16 16 5 5"></path>
+            </svg>
+          </button>
+        </form>
+        <div class="nav-actions">
+          <button class="cart-button" id="cartToggle" aria-label="Open shopping basket">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 8h14l1 13H4L5 8Z"></path>
+              <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+            </svg>
+            <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="catalog">
+      <section class="catalog-hero">
+        <div class="container catalog-hero-content">
+          <div>
+            <span class="eyebrow">The drinks shelf</span>
+            <h1>Good snacks and refreshing sips, all in one place.</h1>
+            <p>Browse drinks and biscuits, then search or filter to find a favourite.</p>
+          </div>
+          <div class="catalog-hero-art" aria-hidden="true">
+            <img src="ginger.jpg" alt="" />
+            <img src="nuvita%20price.jpg" alt="" />
+            <img src="tropical%20juice.webp" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="container catalog-section" aria-labelledby="catalogTitle">
+        <div class="catalog-heading">
+          <div>
+            <p class="catalog-kicker">Shop the collection</p>
+            <h2 id="catalogTitle">Drinks & biscuits</h2>
+          </div>
+          <span class="catalog-count" id="catalogCount">12 products</span>
+        </div>
+        <div class="catalog-filters" role="group" aria-label="Filter drinks">
+          <button class="catalog-filter active" type="button" data-category="all">All products</button>
+          <button class="catalog-filter" type="button" data-category="Drinks">Drinks</button>
+          <button class="catalog-filter" type="button" data-category="Biscuits">Biscuits</button>
+        </div>
+        <p class="catalog-status" id="catalogStatus" aria-live="polite"></p>
+        <div class="catalog-product-grid" id="catalogProducts"></div>
+      </section>
+    </main>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Shopping basket">
+      <div class="cart-header">
+        <h3>Your basket</h3>
+        <button id="closeCart" aria-label="Close basket">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <strong id="cartTotal">KSh 0.00</strong>
+        </div>
+        <form class="payment-demo-form" data-payment-form data-cart-count="cartCount">
+          <label for="checkoutPhone">M-Pesa or mobile money number</label>
+          <input id="checkoutPhone" data-payment-phone type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 0712 345 678" required />
+          <button class="checkout-button" type="submit">Try demo payment</button>
+          <p class="payment-demo-note">Demo only: no payment prompt will be sent and no money will be charged.</p>
+          <p class="payment-demo-status" data-payment-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">L</span>
+            <span>LunaCart</span>
+          </a>
+          <p>Everyday snacks and drinks in one place.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="#catalog">Shop drinks</a>
+          <a href="contact.html">Account</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="search.js"></script>
+    <script src="products.js"></script>
+    <script src="payment-demo.js"></script>
+  </body>
+</html>

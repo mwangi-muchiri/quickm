@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create a LunaCart account or sign in." />
+    <title>Account | LunaCart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="LunaCart home">
+          <span class="brand-mark">L</span>
+          <span>LunaCart</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="products.html">Shop</a>
+          <a href="offers.html">Offers</a>
+          <a href="#account" aria-current="page">Account</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="ghost-button" href="#login">Log in</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth-page" id="account">
+      <div class="container auth-layout">
+        <section class="auth-intro">
+          <span class="eyebrow">Welcome to LunaCart</span>
+          <h1>Your everyday shop, all in one place.</h1>
+          <p>Create an account or sign in to continue shopping.</p>
+          <ul class="auth-benefits">
+            <li><span aria-hidden="true">✓</span> Keep your shopping details together</li>
+            <li><span aria-hidden="true">✓</span> Find your favourite products faster</li>
+            <li><span aria-hidden="true">✓</span> Get updates about new offers</li>
+          </ul>
+        </section>
+
+        <section class="auth-card" aria-label="Account sign-up and login">
+          <div class="auth-tabs" role="tablist" aria-label="Account options">
+            <button class="auth-tab active" id="signupTab" type="button" role="tab" aria-selected="true" aria-controls="signupPanel" data-auth-mode="signup">Create account</button>
+            <button class="auth-tab" id="loginTab" type="button" role="tab" aria-selected="false" aria-controls="loginPanel" data-auth-mode="login">Log in</button>
+          </div>
+
+          <p class="auth-backend-note">
+            This demo page does not send or save passwords. Secure account access needs a connected authentication service.
+          </p>
+          <p class="auth-message" id="authMessage" role="status" aria-live="polite"></p>
+
+          <form class="auth-form" id="signupPanel" role="tabpanel" aria-labelledby="signupTab">
+            <h2 id="authTitle">Create your account</h2>
+            <label>
+              Full name
+              <input name="name" type="text" autocomplete="name" minlength="2" required />
+            </label>
+            <label>
+              Email address
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Password
+              <input id="signupPassword" name="password" type="password" autocomplete="new-password" minlength="8" required />
+              <small>Use at least 8 characters.</small>
+            </label>
+            <label>
+              Confirm password
+              <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" required />
+            </label>
+            <button class="primary-button auth-submit" type="submit">Create account</button>
+          </form>
+
+          <form class="auth-form" id="loginPanel" role="tabpanel" aria-labelledby="loginTab" hidden>
+            <h2>Welcome back</h2>
+            <label>
+              Email address
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Password
+              <input name="password" type="password" autocomplete="current-password" required />
+            </label>
+            <button class="primary-button auth-submit" type="submit">Log in</button>
+          </form>
+
+          <p class="auth-switch-hint">
+            You can keep browsing <a href="products.html">the shop</a> without an account.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">L</span>
+            <span>LunaCart</span>
+          </a>
+          <p>Everyday essentials, one thoughtful cart at a time.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Shop</a>
+          <a href="offers.html">Offers</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="contact.js"></script>
+  </body>
+</html>

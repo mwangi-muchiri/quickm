@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LunaCart | Online Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/fontawesome.css"
+      integrity="sha512-cOd3Jjo4vXG7cyt5/gEQgxwL6c7THvNQxSZphogpsFKsnbgeqEWa7Xsyf7zvDMpdmDAhiUUJGQPc5R3pocvnBQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="topbar" id="home">
+      <div class="container nav-wrap">
+        <div class="brand">
+          <div class="brand-mark">L</div>
+          <span>LunaCart</span>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="products.html">Products</a>
+          <a href="offers.html">Offers</a>
+          <a href="#about">About</a>
+          <a href="contact.html">Account</a>
+        </nav>
+        <form class="nav-search" role="search" id="homeSearchForm">
+          <label class="sr-only" for="homeSearch">Search products</label>
+          <input id="homeSearch" type="search" placeholder="Search products..." autocomplete="off" />
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.8"></circle>
+              <path d="m16 16 5 5"></path>
+            </svg>
+          </button>
+        </form>
+        <div class="nav-actions">
+          <a class="ghost-button" href="contact.html#login">Login</a>
+          <button class="cart-button" id="cartToggle" aria-label="Open cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <span class="eyebrow">New season arrivals</span>
+            <h1>Style your world with smarter essentials.</h1>
+            <p>
+              Discover modern essentials for home, lifestyle, tech, and beauty — curated for everyday comfort and confidence.
+            </p>
+            <div class="hero-actions">
+              <a href="#products" class="primary-button">Shop now</a>
+              <a href="offers.html" class="secondary-button">View deals</a>
+            </div>
+            <ul class="hero-stats" aria-label="Shop highlights">
+              <li><strong>24h</strong><span>Fast delivery</span></li>
+              <li><strong>4.9/5</strong><span>Trusted reviews</span></li>
+              <li><strong>1k+</strong><span>Happy shoppers</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-label="Featured products panel">
+            <div class="feature-card large-card">
+              <span class="pill">Best seller</span>
+              <h3>NoiseCancel Pro</h3>
+              <p>Wireless audio with studio-grade clarity.</p>
+              <div class="card-price-row">
+                <strong>KSh 199</strong>
+                <span>Free shipping</span>
+              </div>
+            </div>
+            <div class="mini-stack">
+              <div class="feature-card small-card">
+                <span class="pill secondary">Home</span>
+                <h4>Glow Lamp</h4>
+                <strong>KSh 49</strong>
+              </div>
+              <div class="feature-card small-card accent-card">
+                <span class="pill secondary">Wear</span>
+                <h4>City Tote</h4>
+                <strong>KSh 68</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="categories container" aria-label="Shop categories">
+        <div class="section-heading">
+          <p>Browse categories</p>
+          <h2>Find what fits your lifestyle</h2>
+        </div>
+        <div class="category-grid">
+          <article class="category-card">
+            <i class="fa-solid fa-laptop"></i>
+            <h3>Tech</h3>
+            <span>42 items</span>
+          </article>
+          <article class="category-card">
+            <i class="fa-solid fa-house"></i>
+            <h3>Home</h3>
+            <span>38 items</span>
+          </article>
+          <article class="category-card">
+            <i class="fa-solid fa-shirt"></i>
+            <h3>Fashion</h3>
+            <span>57 items</span>
+          </article>
+          <article class="category-card">
+            <i class="fa-solid fa-spa"></i>
+            <h3>Beauty</h3>
+            <span>26 items</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="products container" id="products">
+        <div class="section-heading split-row">
+          <div>
+            <p>Featured products</p>
+            <h2>Trending this week</h2>
+          </div>
+          <div class="filter-tabs" aria-label="Product filters">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="Tech">Tech</button>
+            <button class="filter-tab" data-filter="Home">Home</button>
+            <button class="filter-tab" data-filter="Fashion">Fashion</button>
+            <button class="filter-tab" data-filter="Beauty">Beauty</button>
+          </div>
+        </div>
+        <p class="search-status" id="homeSearchStatus" aria-live="polite"></p>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="offer container" id="offers">
+        <div class="offer-banner">
+          <div>
+            <p>Weekend deal</p>
+            <h2>Save up to 40% on curated essentials</h2>
+          </div>
+          <a href="offers.html" class="primary-button">Grab the offer</a>
+        </div>
+      </section>
+
+      <section class="about container" id="about">
+        <div class="about-panel">
+          <div class="about-copy">
+            <p>Why choose us</p>
+            <h2>Thoughtful shopping for a better everyday routine.</h2>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Carefully selected, quality-first products</li>
+              <li><i class="fa-solid fa-check"></i> Secure checkout and easy returns</li>
+              <li><i class="fa-solid fa-check"></i> Real support from our product experts</li>
+            </ul>
+          </div>
+          <div class="about-metrics">
+            <div>
+              <strong>10k+</strong>
+              <span>Orders shipped</span>
+            </div>
+            <div>
+              <strong>98%</strong>
+              <span>Customer satisfaction</span>
+            </div>
+            <div>
+              <strong>7 days</strong>
+              <span>Easy returns</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Shopping cart">
+      <div class="cart-header">
+        <h3>Your cart</h3>
+        <button id="closeCart" aria-label="Close cart">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <strong id="cartTotal">KSh 0.00</strong>
+        </div>
+        <form class="payment-demo-form" data-payment-form data-cart-count="cartCount">
+          <label for="checkoutPhone">M-Pesa or mobile money number</label>
+          <input id="checkoutPhone" data-payment-phone type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 0712 345 678" required />
+          <button class="checkout-button" type="submit">Try demo payment</button>
+          <p class="payment-demo-note">Demo only: no payment prompt will be sent and no money will be charged.</p>
+          <p class="payment-demo-status" data-payment-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </aside>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-content">
+        <div>
+          <div class="brand footer-brand">
+            <div class="brand-mark">L</div>
+            <span>LunaCart</span>
+          </div>
+          <p>All the essentials, one thoughtful cart at a time.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#products">Shop</a>
+          <a href="offers.html">Deals</a>
+          <a href="#about">About</a>
+          <a href="contact.html">Account</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="search.js"></script>
+    <script src="online.js"></script>
+    <script src="payment-demo.js"></script>
+  </body>
+</html>
