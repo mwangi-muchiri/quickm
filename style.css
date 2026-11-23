@@ -1227,6 +1227,8 @@ img {
   font-size: 0.82rem;
 }
 
+/*-----Contacts section starts here-----*/
+
 .auth-page {
   padding: 64px 0;
 }
@@ -1398,7 +1400,7 @@ img {
 .filter-tab:hover {
   transform: translateY(-1px);
 }
-
+/*phone screen size starts here*/
 @media (max-width: 980px) {
   .hero-content,
   .about-panel,
